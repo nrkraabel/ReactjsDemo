@@ -1,0 +1,80 @@
+/* src/Board.css */
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .game-board {
+    margin: 10px;
+    display: grid;
+    grid-template-rows: repeat(3, 100px); /* Adjusts rows for a 3x3 grid */
+    grid-template-columns: repeat(3, 100px); /* Adjusts columns for a 3x3 grid */
+    gap: 5px;
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #000000;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .game-info {
+    margin-top: 20px;
+  }
+  
+  .reset-button {
+    margin-top: 20px;
+    background-color: #008CBA; /* Blue */
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .reset-button:hover {
+    background-color: #007B9A;
+  }
+  
+  @media (max-width: 600px) {
+    .square {
+      width: 60px;
+      height: 60px;
+      font-size: 18px;
+      transition: background-color 0.5s ease;
+
+    }
+    
+    .square.active:hover {
+        background-color: #e193cb;
+      }
+      
+    .highlight {
+        background-color: #10ea10; 
+        animation: highlight-animation 1s infinite alternate;
+      }
+      
+      @keyframes highlight-animation {
+        from {
+          transform: scale(1.0);
+          background-color: #90ee90;
+        }
+        to {
+          transform: scale(1.1);
+          background-color: #afffaf;
+        }
+      }
+    .game-board {
+      grid-template-rows: repeat(3, 60px);
+      grid-template-columns: repeat(3, 60px);
+    }
+  }
+  
